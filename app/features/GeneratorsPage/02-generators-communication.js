@@ -4,7 +4,7 @@
 function* passDataToInstance() {
   console.log("passDataToInstance: BEFORE yield");
   let myData = 123;
-  yield myData;
+  //TODO
   console.log("passDataToInstance: AFTER yield");
 }
 
@@ -16,7 +16,7 @@ const fromGenFunToInstanceTest = () => {
 
 function* receiveDataFromInstance() {
   console.log("receiveDataFromInstance: BEFORE yield");
-  let receivedData = yield;
+  let receivedData = null;//TODO
   console.log("receiveDataFromInstance: AFTER yield, received:", receivedData);
 }
 
@@ -27,8 +27,8 @@ const fromInstanceToGenFunTest = () => {
 };
 
 export const example02 = () => {
-  fromGenFunToInstanceTest();
-  fromInstanceToGenFunTest();
+  // fromGenFunToInstanceTest();
+  // fromInstanceToGenFunTest();
 };
 
 

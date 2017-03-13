@@ -7,23 +7,18 @@ function regularFn() {
 //TODO 2: pause generator function execution
 
 function* createMyGenerator() {
-  yield;
   console.log("GEN: 1st");
-  yield;
   console.log("GEN: 2nd");
 }
 
 export const example01 = () => {
   // regularFn();
-  let generator = createMyGenerator();
-  console.log("Gen created, but NOT run: nothing logged");
+  //TODO
+  // console.log("Gen created, but NOT run: nothing logged");
 
-  console.log("before first next()");
-  generator.next();
-  console.log("before second next()");
-  generator.next();
-  console.log("before third next()");
-  generator.next();
-  console.log("before fourth next()");
-  generator.next();
+  // TODO
+  // console.log("before first next()");
+  // console.log("before second next()");
+  // console.log("before third next()");
+  // console.log("before fourth next()");
 };

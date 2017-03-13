@@ -2,20 +2,8 @@ const formatMsg = (msgData) => {
   return `${msgData.from}: ${msgData.message}`;
 };
 
-let ALL_MESSAGES = [];
 function* createChat(login) {
-  while (true) {
-    let receivedMessages = ALL_MESSAGES.filter((message) => {
-      return message.to === login;
-    });
-    let newMessageData = yield receivedMessages;
-    if (newMessageData && newMessageData.to) {
-      ALL_MESSAGES.push({
-        ...newMessageData,
-        from: login
-      });
-    }
-  }
+//TODO
 }
 
 const chatApp = () => {
@@ -50,7 +38,7 @@ const chatApp = () => {
 };
 
 export const task02 = () => {
-  chatApp();
+  // chatApp();
 };
 
 

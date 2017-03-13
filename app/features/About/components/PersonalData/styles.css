@@ -1,0 +1,9 @@
+:local(.personalData) {
+  padding: 12px;
+}
+
+:local(.personalDataImg) {
+  display: block;
+  margin: 0 auto;
+  width: 800px;
+}

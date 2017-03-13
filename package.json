@@ -1,0 +1,88 @@
+{
+  "name": "rr-real-estates-app",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production npm run clean && webpack -p",
+    "clean": "rimraf dist",
+    "start": "cross-env webpack-dev-server --port 4000",
+    "pretest": "npm run test:clean",
+    "test:clean": "rimraf ./coverage",
+    "test": "cross-env NODE_ENV=test jest",
+    "test:coverage": "cross-env NODE_ENV=test jest --coverage",
+    "test:watch": "cross-env NODE_ENV=test jest --watchAll"
+  },
+  "dependencies": {
+    "babel-polyfill": "6.23.0",
+    "bootstrap": "3.3.7",
+    "lodash": "4.17.4",
+    "normalizr": "3.2.2",
+    "react": "15.4.2",
+    "react-dom": "15.4.2",
+    "react-redux": "5.0.3",
+    "react-router": "4.0.0",
+    "react-router-dom": "4.0.0",
+    "react-router-redux": "5.0.0-alpha.2",
+    "redux": "3.6.0",
+    "redux-form": "6.5.0",
+    "redux-saga": "0.14.3",
+    "redux-thunk": "2.2.0",
+    "redux-ui": "0.0.15",
+    "reselect": "2.5.4",
+    "whatwg-fetch": "2.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "6.23.1",
+    "babel-loader": "6.4.0",
+    "babel-preset-latest": "6.22.0",
+    "babel-preset-react": "6.23.0",
+    "babel-preset-stage-0": "6.22.0",
+    "babel-plugin-dynamic-import-node": "1.0.0",
+    "babel-plugin-react-transform": "2.0.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.23.0",
+    "babel-plugin-transform-react-constant-elements": "6.23.0",
+    "babel-plugin-transform-react-inline-elements": "6.22.0",
+    "babel-plugin-transform-react-remove-prop-types": "0.3.2",
+    "cheerio": "0.22.0",
+    "cross-env": "3.2.3",
+    "css-loader": "0.26.4",
+    "enzyme": "2.7.1",
+    "exports-loader": "0.6.4",
+    "file-loader": "0.10.1",
+    "html-webpack-plugin": "2.28.0",
+    "jest-cli": "19.0.2",
+    "raw-loader": "0.5.1",
+    "react-addons-test-utils": "15.4.2",
+    "redux-devtools-extension": "2.13.0",
+    "rimraf": "2.6.1",
+    "style-loader": "0.13.2",
+    "webpack": "2.2.1",
+    "webpack-dev-server": "2.4.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "app/**/*.{js,jsx}",
+      "!app/**/*.test.{js,jsx}",
+      "!app/*/RbGenerated*/*.{js,jsx}",
+      "!app/app.js",
+      "!app/routes.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 98,
+        "branches": 91,
+        "functions": 98,
+        "lines": 98
+      }
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "app"
+    ],
+    "moduleNameMapper": {
+      ".*\\.(css|less|styl|scss|sass)$": "<rootDir>/internals/mocks/cssModule.js",
+      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/image.js"
+    },
+    "setupTestFrameworkScriptFile": "<rootDir>/internals/testing/test-bundler.js",
+    "testRegex": "tests/.*\\.test\\.js$"
+  }
+}
